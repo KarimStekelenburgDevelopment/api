@@ -5,14 +5,13 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "subordertypes", schema = "public", catalog = "PocketOrder")
 
-class SuborderType implements Serializable {
+public class SuborderType implements Serializable {
     private List<Suborder> suborders;
 
     private int id;

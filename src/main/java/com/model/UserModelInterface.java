@@ -1,6 +1,7 @@
 package com.model;
 
 import com.entity.User;
+
 import java.util.List;
 public interface UserModelInterface {
     List<User> getAll();

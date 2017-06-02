@@ -1,18 +1,16 @@
 package com.entity;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.serializer.UserSerializerWithoutArea;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "areas", schema = "public", catalog = "PocketOrder")
-class Area implements Serializable {
+public class Area implements Serializable {
     private int id;
     private String name;
     private List<User> users;

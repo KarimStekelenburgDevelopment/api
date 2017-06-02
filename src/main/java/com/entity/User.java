@@ -1,17 +1,11 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.serializer.AreaSerializerWithoutUser;
-import com.serializer.UserRoleSerializerWithoutUser;
-import com.serializer.UserSerializerWithoutArea;
 
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 

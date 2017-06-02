@@ -1,15 +1,11 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import org.springframework.data.annotation.*;
 
 import javax.persistence.*;
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
