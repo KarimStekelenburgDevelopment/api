@@ -1,0 +1,4 @@
+
+squid:UselessImportCheck"QRemove this unused import 'org.springframework.context.annotation.ComponentScan'.(æëòÒûÿÿÿÿ8‚‹¹÷¿+
+|squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(ÂÚ<8ûÊ·Ñ¾+
+[squid:S1118":Add a private constructor to hide the implicit public one.(§÷öÍüÿÿÿÿ8ûÊ·Ñ¾+

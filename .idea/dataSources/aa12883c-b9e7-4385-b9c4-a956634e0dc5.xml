@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost [2]">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="PocketOrder">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="AbsentieSys"/>
+    <schema id="4" parent="1" name="AbsentieSysteem"/>
+    <schema id="5" parent="1" name="domotica"/>
+    <schema id="6" parent="1" name="FietsVerhuur"/>
+    <schema id="7" parent="1" name="gotTestServer"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <table id="11" parent="2" name="Areas"/>
+    <table id="12" parent="2" name="Areas_Users"/>
+    <table id="13" parent="2" name="OrderStatus"/>
+    <table id="14" parent="2" name="Orders"/>
+    <table id="15" parent="2" name="Products"/>
+    <table id="16" parent="2" name="Products_SubOrders"/>
+    <table id="17" parent="2" name="SubOrderTypes"/>
+    <table id="18" parent="2" name="SubOrders"/>
+    <table id="19" parent="2" name="Tables"/>
+    <table id="20" parent="2" name="UserRoles"/>
+    <table id="21" parent="2" name="Users"/>
+    <column id="22" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="11" name="Areas_name_uindex">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="26" parent="11" name="Areas_name_uindex">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>Areas_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="27" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="12" name="user_FK">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="12" name="area_FK">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="30" parent="12" name="Areas_Users_User_FK">
+      <ColNames>area_FK</ColNames>
+    </index>
+    <key id="31" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="12" name="Areas_Users_Area_FK">
+      <ColNames>area_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>Areas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="33" parent="12" name="Areas_Users_User_FK">
+      <ColNames>area_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>Users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="34" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="36" parent="13" name="OrderStatus_name_uindex">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="38" parent="13" name="OrderStatus_name_uindex">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>OrderStatus_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="39" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="14" name="table_FK">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="14" name="status_FK">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="14" name="timeOfPlacement">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="43" parent="14" name="Orders_OrderStatus_FK">
+      <ColNames>status_FK</ColNames>
+    </index>
+    <key id="44" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="45" parent="14" name="Orders_Tables_FK">
+      <ColNames>id</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>Tables</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="46" parent="14" name="Orders_OrderStatus_FK">
+      <ColNames>status_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>OrderStatus</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="15" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="15" name="unitPrice">
+      <Position>3</Position>
+      <DataType>decimal(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="15" name="taxPerc">
+      <Position>4</Position>
+      <DataType>decimal(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="51" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="16" name="product_FK">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="16" name="suborder_FK">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="55" parent="16" name="Products_SubOrders_Products_fk">
+      <ColNames>product_FK</ColNames>
+    </index>
+    <index id="56" parent="16" name="Products_SubOrders_SubOrders_fk">
+      <ColNames>suborder_FK</ColNames>
+    </index>
+    <key id="57" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="16" name="Products_SubOrders_Products_fk">
+      <ColNames>product_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>Products</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="59" parent="16" name="Products_SubOrders_SubOrders_fk">
+      <ColNames>suborder_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>SubOrders</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="60" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="62" parent="17" name="SubOrderTypes_name_uindex">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="64" parent="17" name="SubOrderTypes_name_uindex">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>SubOrderTypes_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="65" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="66" parent="18" name="order_FK">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="18" name="type_FK">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="68" parent="18" name="SubOrders_Orders_fk">
+      <ColNames>order_FK</ColNames>
+    </index>
+    <index id="69" parent="18" name="SubOrders_SubOrderType_fk">
+      <ColNames>type_FK</ColNames>
+    </index>
+    <key id="70" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="18" name="SubOrders_Order_FK">
+      <ColNames>id</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>Orders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="72" parent="18" name="SubOrders_SubOrderType_fk">
+      <ColNames>type_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>SubOrderTypes</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="73" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="74" parent="19" name="area_FK">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="19" name="numOfSeats">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="76" parent="19" name="Tables_Areas_FK">
+      <ColNames>area_FK</ColNames>
+    </index>
+    <key id="77" parent="19" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="78" parent="19" name="Tables_Areas_FK">
+      <ColNames>area_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>Areas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="79" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="80" parent="20" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="81" parent="20" name="UserRoles_name_uindex">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="82" parent="20" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="83" parent="20" name="UserRoles_name_uindex">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UserRoles_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="84" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="85" parent="21" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="21" name="psswrd">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="87" parent="21" name="role_FK">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="21" name="enabled">
+      <Position>5</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <index id="89" parent="21" name="Users_UserRoles_fk">
+      <ColNames>role_FK</ColNames>
+    </index>
+    <key id="90" parent="21" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="91" parent="21" name="Users_UserRoles_fk">
+      <ColNames>role_FK</ColNames>
+      <RefSchemaName>pocketorder</RefSchemaName>
+      <RefTableName>UserRoles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

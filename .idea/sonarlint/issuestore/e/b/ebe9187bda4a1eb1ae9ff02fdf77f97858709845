@@ -1,0 +1,11 @@
+
+^squid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ÅÊØÁ+
+…squid:UselessImportCheck"\Remove this unused import 'org.springframework.security.core.context.SecurityContextHolder'.(ŒÄæë8ÅÊØÁ+
+fsquid:UselessImportCheck"=Remove this unused import 'com.service.MyUserDetailsService'.(áµç’8÷«˜ÉÀ+
+dsquid:UselessImportCheck";Remove this unused import 'javax.servlet.ServletException'.(Š‰™Œ8ÅÊØÁ+
+squid:UselessImportCheck"VRemove this unused import 'org.springframework.security.core.AuthenticationException'.(¤ò›¿8ÅÊØÁ+
+ksquid:UselessImportCheck"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8ÅÊØÁ+
+{squid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "encoder".(¤…ÃÍ8Íİ—ÉÀ+
+lsquid:UselessImportCheck"CRemove this unused import 'javax.servlet.http.HttpServletResponse'.(Á¨ïë8ÅÊØÁ+
+csquid:S1192"GDefine a constant instead of duplicating this literal "/index" 3 times.(ÁòÍ8ğ“ÖÁ+
+csquid:S1192"GDefine a constant instead of duplicating this literal "/login" 3 times.(ğëÔ8­ÄáÁ+

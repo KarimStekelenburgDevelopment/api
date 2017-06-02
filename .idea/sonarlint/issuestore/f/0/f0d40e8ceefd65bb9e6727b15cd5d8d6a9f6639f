@@ -1,0 +1,9 @@
+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(×æ©Êùÿÿÿÿ8Ôß…ú¿+
+fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÝžÍ8Ôß…ú¿+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ûª¿ƒ8Ôß…ú¿+
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(ž¼•8Ôß…ú¿+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(³ä÷Õþÿÿÿÿ8Ôß…ú¿+
+osquid:UselessImportCheck"FRemove this unused import 'com.fasterxml.jackson.annotation.JsonView'.(Â„Ê¬8Ôß…ú¿+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¹ÌµÛüÿÿÿÿ8Ôß…ú¿+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(›î¦¿þÿÿÿÿ8Ôß…ú¿+
