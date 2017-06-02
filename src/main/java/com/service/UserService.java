@@ -11,12 +11,9 @@ import org.springframework.stereotype.Service;
 public class UserService implements UserServiceInterface {
     @Autowired
     private UserModelInterface userModel;
-    @Override
-    public User getById(int id) {
-        User obj = userModel.getById(id);
-        return obj;
-    }
-    @Override
+
+
+
     public List<User> getAll(){
         return userModel.getAll();
     }
@@ -29,6 +26,21 @@ public class UserService implements UserServiceInterface {
             return true;
         }
     }
+
+    @Override
+    public User getById(int id) {
+        User obj = userModel.getById(id);
+        return obj;
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        User obj = userModel.getUserByUsername(username);
+        return obj;
+    }
+
+
+
     @Override
     public void update(User user) {
         userModel.update(user);

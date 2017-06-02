@@ -18,16 +18,19 @@ public class UserController {
     @Autowired
     private UserServiceInterface userService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) {
-        User user = userService.getById(id);
-        return new ResponseEntity<User>(user, HttpStatus.OK);
-    }
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> list = userService.getAll();
         return new ResponseEntity<List<User>>(list, HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) {
+        User user = userService.getById(id);
+        return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
+    
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> addUser(@RequestBody User user, UriComponentsBuilder builder) {
         boolean flag = userService.add(user);
