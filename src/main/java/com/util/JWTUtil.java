@@ -1,44 +1,50 @@
 package com.util;
 
 
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
+import com.entity.User;
+import com.entity.UserRole;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.impl.crypto.MacProvider;
+import io.jsonwebtoken.lang.Assert;
+
+import java.io.UnsupportedEncodingException;
 import java.security.Key;
-import io.jsonwebtoken.*;
 import java.util.Date;
 
 public class JWTUtil {
+    private Key key = MacProvider.generateKey();
 
-    //Sample method to construct a JWT
-    private String createJWT(String id, String issuer, String subject, long ttlMillis) {
-
-        //The JWT signature algorithm we will be using to sign the token
-        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-
-        long nowMillis = System.currentTimeMillis();
-        Date now = new Date(nowMillis);
-
-        //We will sign our JWT with our ApiKey secret
-        byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey.getSecret());
-        Key signingKey = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
-
-        //Let's set the JWT Claims
-        JwtBuilder builder = Jwts.builder().setId(id)
-                .setIssuedAt(now)
-                .setSubject(subject)
-                .setIssuer(issuer)
-                .signWith(signatureAlgorithm, signingKey);
-
-        //if it has been specified, let's add the expiration
-        if (ttlMillis >= 0) {
-            long expMillis = nowMillis + ttlMillis;
-            Date exp = new Date(expMillis);
-            builder.setExpiration(exp);
-        }
-
-        //Builds the JWT and serializes it to a compact, URL-safe string
-        return builder.compact();
+    /**
+     * Takes in a User object and generates a JWT-token holding relevant user information
+     * @param user user object
+     * @return generated JWT-token
+     * @throws UnsupportedEncodingException
+     */
+    public String generateJWT(User user) {
+        // We need a signing key, so we'll create one just for this example. Usually
+// the key would be read from your application configuration instead.
+        return Jwts.builder()
+                .setSubject("user")
+                .claim("userId", user.getId())
+                .claim("username", user.getUsername())
+                .claim("role", user.getRole().getName())
+                .signWith(SignatureAlgorithm.HS512, this.key)
+                .compact();
     }
 
+    /**
+     * Takes in a JWT-token and attempts to parses it using our key
+     * @param token JWT-token sent by the client
+     * @return claims object that holds the parsed information
+     * @throws UnsupportedEncodingException if the parsing fails (token is invalid)
+     */
+    public Claims parseJWT(String token) throws UnsupportedEncodingException {
+        System.out.println(Jwts.parser().setSigningKey(this.key).parseClaimsJws(token).getBody().getSubject());
+        System.out.println("");
+        System.out.println(Jwts.parser().setSigningKey(this.key).parseClaimsJws(token).getBody());
 
+        return Jwts.parser().setSigningKey(this.key).parseClaimsJws(token).getBody();
+    }
 }
