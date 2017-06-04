@@ -36,13 +36,17 @@ public class LoginController {
         User user = null;
         try {
             user = userService.getUserByUsername(loginRequest.getUsername());
+
+            if (userService.validatePassword(user, loginRequest.getPassword()) == false){
+                throw new LoginException("password incorrect");
+            }
+
+
         } catch (LoginException e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("LOGIN FAILED");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("login failure");
         }
-        if (user == null){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("LOGIN FAILED");
-        }
+
         return ResponseEntity.status(HttpStatus.OK).body("{token : "+jwtUtil.generateJWT(user)+" }");
     }
 }

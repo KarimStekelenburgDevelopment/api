@@ -35,6 +35,7 @@ public class UserController {
     public ResponseEntity<Void> addUser(@RequestBody User user, UriComponentsBuilder builder) {
         boolean flag = userService.add(user);
         if (flag == false) {
+            System.out.println("soidsjdkjdlkhfj");
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
         HttpHeaders headers = new HttpHeaders();

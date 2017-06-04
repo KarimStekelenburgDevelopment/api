@@ -61,4 +61,13 @@ public class UserRole {
     public void setUsers(List<User> users) {
         users = users;
     }
+
+    @Override
+    public String toString() {
+        return "UserRole{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }

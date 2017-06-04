@@ -13,4 +13,6 @@ public interface UserServiceInterface {
 
     void update(User user);
     void delete(int id);
+
+    boolean validatePassword(User user, String password);
 }

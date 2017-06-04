@@ -1,13 +1,18 @@
 package com.model;
 
 import com.entity.User;
+import com.entity.UserRole;
 import com.exception.LoginException;
-import org.hibernate.annotations.NamedQuery;
+import com.exception.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -15,9 +20,18 @@ import java.util.List;
 @Transactional
 @Repository
 public class UserModel implements UserModelInterface {
+
     @PersistenceContext
     @Autowired
     private EntityManager entityManager;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder(5);
+    }
 
     @SuppressWarnings("unchecked")
     @Override
@@ -33,29 +47,44 @@ public class UserModel implements UserModelInterface {
 
     @Override
     public User getUserByUsername(String username) throws LoginException {
-        User user = entityManager.createQuery(
-                "SELECT u from User u WHERE u.username = :username", User.class).
-                setParameter("username", username).getSingleResult();
+        User user;
 
-        if (user == null){
+        try{
+            user = entityManager.createQuery(
+                    "SELECT u from User u WHERE u.username = :username", User.class).
+                    setParameter("username", username).getSingleResult();
+        }
+        catch (NoResultException e){
             throw new LoginException("user not found");
         }
-
         return user;
 
 
 
     }
 
+
     @Override
     public void add(User user) {
+        user.setRole();
+        entityManager.persist(role);
+        System.out.println(user);
+        user.setPassword(passwordEncoder().encode(user.getPassword()));
         entityManager.persist(user);
     }
+
+    /**
+     * persists an update on a user object to the database.
+     * be aware that FULL INFORMATION needs to be provided due to
+     * password enctryption.
+     * @param user
+     */
+
     @Override
     public void update(User user) {
         User user1 = getById(user.getId());
         user1.setUsername(user.getUsername());
-        user1.setPsswrd(user.getPsswrd());
+        user1.setPassword(passwordEncoder().encode(user.getPassword()));
         user1.setAreas(user.getAreas());
         user1.setRole(user.getRole());
         entityManager.flush();
@@ -66,9 +95,18 @@ public class UserModel implements UserModelInterface {
     }
 
     @Override
-    public boolean exists(String username) {
+    public boolean exists(String username){
         String hql = "FROM User as usr WHERE usr.username = ?";
-        Object user = entityManager.createQuery(hql).setParameter(0, username).getSingleResult();
-        return user != null;
+        try{
+            entityManager.createQuery(hql).setParameter(0, username).getSingleResult();
+        }catch (NoResultException e){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean validatePassword(User user, String password){
+        return passwordEncoder().matches(user.getPassword(), password);
     }
 }

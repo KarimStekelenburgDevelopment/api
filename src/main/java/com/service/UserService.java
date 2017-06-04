@@ -8,6 +8,7 @@ import com.model.UserModel;
 import com.model.UserModelInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService implements UserServiceInterface {
@@ -19,6 +20,7 @@ public class UserService implements UserServiceInterface {
     public List<User> getAll(){
         return userModel.getAll();
     }
+    @Transactional
     @Override
     public synchronized boolean add(User user){
         if (userModel.exists(user.getUsername())) {
@@ -47,8 +49,12 @@ public class UserService implements UserServiceInterface {
     public void update(User user) {
         userModel.update(user);
     }
+
     @Override
     public void delete(int userId) {
         userModel.delete(userId);
     }
+
+    @Override
+    public boolean validatePassword(User user, String password){ return userModel.validatePassword(user, password); }
 }

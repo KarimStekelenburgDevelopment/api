@@ -15,7 +15,7 @@ import java.util.List;
 public class User implements Serializable {
     private int id;
     private String username;
-    private String psswrd;
+    private String password;
     private List<Area> areas;
 
     private UserRole Role;
@@ -41,13 +41,13 @@ public class User implements Serializable {
     }
 
     @Basic
-    @Column(name = "psswrd", nullable = true, length = 40)
-    public String getPsswrd() {
-        return psswrd;
+    @Column(name = "psswrd", nullable = false, length = 40)
+    public String getPassword() {
+        return password;
     }
 
-    public void setPsswrd(String psswrd) {
-        this.psswrd = psswrd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class User implements Serializable {
 
         if (id != user.id) return false;
         if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (psswrd != null ? !psswrd.equals(user.psswrd) : user.psswrd != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
 
         return true;
     }
@@ -68,7 +68,7 @@ public class User implements Serializable {
     public int hashCode() {
         int result = id;
         result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (psswrd != null ? psswrd.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
 
@@ -89,5 +89,17 @@ public class User implements Serializable {
 
     public void setRole(UserRole role) {
         Role = role;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", areas=" + areas +
+                ", Role=" + Role +
+                '}';
     }
 }
