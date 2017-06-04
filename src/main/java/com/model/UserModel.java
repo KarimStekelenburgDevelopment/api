@@ -1,26 +1,22 @@
 package com.model;
 
 import com.entity.User;
+import com.exception.LoginException;
 import org.hibernate.annotations.NamedQuery;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
-
-
-@NamedQuery(
-        name="getUserByUsername",
-        query="SELECT c FROM Customer c WHERE c.name LIKE :custName"
-)
 
 @Transactional
 @Repository
 public class UserModel implements UserModelInterface {
     @PersistenceContext
+    @Autowired
     private EntityManager entityManager;
 
     @SuppressWarnings("unchecked")
@@ -36,9 +32,19 @@ public class UserModel implements UserModelInterface {
     }
 
     @Override
-    public User getUserByUsername(String username) {
-        TypedQuery<User> userQuery = entityManager.createQuery("FROM User WHERE username = :username", User.class);
-        return userQuery.getSingleResult();
+    public User getUserByUsername(String username) throws LoginException {
+        User user = entityManager.createQuery(
+                "SELECT u from User u WHERE u.username = :username", User.class).
+                setParameter("username", username).getSingleResult();
+
+        if (user == null){
+            throw new LoginException("user not found");
+        }
+
+        return user;
+
+
+
     }
 
     @Override

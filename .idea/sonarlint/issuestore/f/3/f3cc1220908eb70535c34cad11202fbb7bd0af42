@@ -1,0 +1,7 @@
+
+ksquid:UselessImportCheck"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8×¬ †Ç+
+squid:UselessImportCheck"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(Â¬À·ùÿÿÿÿ8ÍÎÇ†Ç+
+Fsquid:S1166"%Either log or rethrow this exception.(Àù¾Œùÿÿÿÿ8„¥™Ç+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8„¥™Ç+
+U
+squid:S106";Replace this usage of System.out or System.err by a logger.(¥ãš8„¥™Ç+

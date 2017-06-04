@@ -1,0 +1,6 @@
+
+bsquid:UselessImportCheck"9Remove this unused import 'javax.persistence.TypedQuery'.(—Ğİ¦8Ÿ–²˜Ç+
+`squid:UselessImportCheck"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8‹’â˜Ç+
+gsquid:UselessImportCheck"9Remove this unused import 'org.hibernate.SessionFactory'.(ñ¦«¬şÿÿÿÿ8‹’â˜Ç+
+osquid:UselessImportCheck"FRemove this unused import 'org.hibernate.cfg.AnnotationConfiguration'.(×”­8‹’â˜Ç+
+dsquid:UselessImportCheck"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8Èüå˜Ç+

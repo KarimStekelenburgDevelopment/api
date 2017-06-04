@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.User;
+import com.exception.LoginException;
+import com.model.UserModel;
 import com.model.UserModelInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements UserServiceInterface {
     @Autowired
-    private UserModelInterface userModel;
+    private UserModelInterface userModel = new UserModel();
 
 
 
@@ -34,7 +36,7 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public User getUserByUsername(String username) {
+    public User getUserByUsername(String username) throws LoginException {
         User obj = userModel.getUserByUsername(username);
         return obj;
     }

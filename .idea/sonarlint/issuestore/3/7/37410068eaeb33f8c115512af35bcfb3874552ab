@@ -1,15 +1,0 @@
-
-Psquid:S1066"/Merge this if statement with the enclosing one.(‚¿‡úıÿÿÿÿ8ÿåÿ¢À+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8œÎ‰£À+
-qsquid:UselessImportCheck"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8ÏÌÂ»À+
-U
-squid:S106";Replace this usage of System.out or System.err by a logger.(¶«º,8ğ‚³¢À+
-Asquid:S1166"%Either log or rethrow this exception.(”ı¾8ÿåÿ¢À+
-V
-squid:S106";Replace this usage of System.out or System.err by a logger.(‹íÌĞ8ğ‚³¢À+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(¿òÀ†şÿÿÿÿ8­¢®¹À+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(§’Æıÿÿÿÿ8È‹·À+
-Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8”ôş¶À+
