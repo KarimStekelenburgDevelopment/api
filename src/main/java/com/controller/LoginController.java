@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("login")
+@RequestMapping("/login")
 public class LoginController {
     private UserServiceInterface userService;
     private JWTUtil jwtUtil = new JWTUtil();
