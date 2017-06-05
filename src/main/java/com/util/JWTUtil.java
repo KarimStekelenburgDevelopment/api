@@ -4,15 +4,14 @@ package com.util;
 import com.entity.User;
 import com.entity.UserRole;
 import com.model.UserModel;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 import io.jsonwebtoken.impl.crypto.MacProvider;
 import io.jsonwebtoken.lang.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -20,7 +19,7 @@ import java.security.Key;
 import java.util.Date;
 import java.util.Properties;
 
-@javax.annotation.Resource
+@Component
 public class JWTUtil {
     private Resource resource = new ClassPathResource("/application.properties");
     private Properties props = PropertiesLoaderUtils.loadProperties(resource);
@@ -29,11 +28,13 @@ public class JWTUtil {
     @Autowired
     private UserModel userModel;
 
+    @Autowired
     public JWTUtil() throws IOException {
     }
 
     /**
      * Takes in a User object and generates a JWT-token holding relevant user information
+     *
      * @param user user object
      * @return generated JWT-token
      * @throws UnsupportedEncodingException
@@ -47,8 +48,6 @@ public class JWTUtil {
                 .setIssuedAt(now)
                 .claim("distortion", nowMillis)
                 .claim("userId", user.getId())
-                .claim("username", user.getUsername())
-                .claim("role", user.getRole().getName())
                 .signWith(SignatureAlgorithm.HS512, key)
                 .compact();
 
@@ -56,20 +55,23 @@ public class JWTUtil {
 
     /**
      * Takes in a JWT-token and attempts to parses it using our key
+     *
      * @param token JWT-token sent by the client
      * @return claims object that holds the parsed information
      * @throws UnsupportedEncodingException if the parsing fails (token is invalid)
      */
-    public Claims parseJWT(String token) throws UnsupportedEncodingException {
-        System.out.println(key);
-        System.out.println(token);
-        System.out.println(Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody().getSubject());
-        System.out.println("");
-        System.out.println(Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody().get("userId"));
-        User user = userModel.
+    public User parseJWT(String token) throws UnsupportedEncodingException {
 
+        Jws<Claims> claims = Jwts.parser()
+                .requireSubject("user")
+                .setSigningKey(key)
+                .parseClaimsJws(token);
 
-        return Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody().get("okdok");
+        int userId = claims.getBody().get("userId", Integer.class);
+        System.out.println(userId);
+        User user = userModel.getById(userId);
+
+        return user;
     }
 
 }

@@ -20,14 +20,13 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class UserController {
     @Autowired
     private UserServiceInterface userService;
-    private JWTUtil jwtUtil = new JWTUtil();
 
-    public UserController() throws IOException {
-    }
+    @Autowired
+    JWTUtil jwtUtil;
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<User>> getAllUsers(@RequestHeader("Authorization") String token) throws UnsupportedEncodingException {
-        jwtUtil.parseJWT(token);
+        System.out.println(jwtUtil.parseJWT(token));
 
         List<User> list = userService.getAll();
         return new ResponseEntity<List<User>>(list, HttpStatus.OK);

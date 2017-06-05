@@ -28,8 +28,9 @@ import java.util.Map;
 public class LoginController {
     @Autowired
     private UserServiceInterface userService = new UserService();
-    private JWTUtil jwtUtil = new JWTUtil();
-    private Gson gson = new GsonBuilder().create();
+
+    @Autowired
+    private JWTUtil jwtUtil;
 
     public LoginController() throws IOException {
     }
