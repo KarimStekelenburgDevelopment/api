@@ -1,8 +1,11 @@
 package com.controller;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import com.entity.User;
 import com.service.UserServiceInterface;
+import com.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,9 +20,15 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class UserController {
     @Autowired
     private UserServiceInterface userService;
+    private JWTUtil jwtUtil = new JWTUtil();
+
+    public UserController() throws IOException {
+    }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<User>> getAllUsers(@RequestHeader("Authorization") String token) throws UnsupportedEncodingException {
+        jwtUtil.parseJWT(token);
+
         List<User> list = userService.getAll();
         return new ResponseEntity<List<User>>(list, HttpStatus.OK);
     }

@@ -18,7 +18,7 @@ public class User implements Serializable {
     private String password;
     private List<Area> areas;
 
-    private UserRole Role;
+    private UserRole role;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -84,11 +84,11 @@ public class User implements Serializable {
     @ManyToOne
     @JoinColumn(name = "role_fk", referencedColumnName = "id", nullable = false)
     public UserRole getRole() {
-        return Role;
+        return this.role;
     }
 
     public void setRole(UserRole role) {
-        Role = role;
+        this.role = role;
     }
 
 
@@ -99,7 +99,7 @@ public class User implements Serializable {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", areas=" + areas +
-                ", Role=" + Role +
+                ", Role=" + this.role +
                 '}';
     }
 }

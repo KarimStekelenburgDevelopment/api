@@ -6,6 +6,7 @@ import com.exception.LoginException;
 import com.exception.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
@@ -27,6 +28,9 @@ public class UserModel implements UserModelInterface {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRoleModel userRoleModel;
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -66,8 +70,9 @@ public class UserModel implements UserModelInterface {
 
     @Override
     public void add(User user) {
-        user.setRole();
-        entityManager.persist(role);
+        System.out.println(userRoleModel.getById(1));
+        UserRole userRole = userRoleModel.getById(user.getRole().getId());
+        user.setRole(userRole);
         System.out.println(user);
         user.setPassword(passwordEncoder().encode(user.getPassword()));
         entityManager.persist(user);
@@ -107,6 +112,7 @@ public class UserModel implements UserModelInterface {
 
     @Override
     public boolean validatePassword(User user, String password){
-        return passwordEncoder().matches(user.getPassword(), password);
+        String userInput = passwordEncoder().encode(password);
+        return passwordEncoder().matches(password, user.getPassword());
     }
 }
