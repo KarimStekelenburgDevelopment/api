@@ -1,12 +1,13 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "userroles", schema = "public", catalog = "PocketOrder")
 public class UserRole {
     private int id;
@@ -15,6 +16,8 @@ public class UserRole {
 
 
     @Id
+    @SequenceGenerator(name="pk_sequence",sequenceName="users_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.AUTO ,generator="pk_sequence")
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -53,6 +56,8 @@ public class UserRole {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
+
+    @JsonIgnore
     @OneToMany(mappedBy = "role")
     public List<User> getUsers() {
         return users;

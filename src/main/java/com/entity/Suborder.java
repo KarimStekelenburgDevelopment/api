@@ -1,6 +1,7 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -44,6 +45,7 @@ public class Suborder implements Serializable {
         return id;
     }
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "order_fk", referencedColumnName = "id", nullable = false)
     public Order getOrder() {

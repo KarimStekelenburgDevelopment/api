@@ -3,7 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.User;
-import com.exception.LoginException;
+import com.exception.UserException;
+import com.exception.UserRoleException;
 import com.model.UserModel;
 import com.model.UserModelInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,29 +17,25 @@ public class UserService implements UserServiceInterface {
     private UserModelInterface userModel = new UserModel();
 
 
-
+    @Override
     public List<User> getAll(){
         return userModel.getAll();
     }
+
     @Transactional
     @Override
-    public synchronized boolean add(User user){
-        if (userModel.exists(user.getUsername())) {
-            return false;
-        } else {
-            userModel.add(user);
-            return true;
-        }
+    public void add(User user) throws UserRoleException, UserException {
+        userModel.add(user);
     }
 
     @Override
-    public User getById(int id) {
+    public User getById(int id) throws UserException {
         User obj = userModel.getById(id);
         return obj;
     }
 
     @Override
-    public User getUserByUsername(String username) throws LoginException {
+    public User getUserByUsername(String username) throws UserException {
         User obj = userModel.getUserByUsername(username);
         return obj;
     }
@@ -46,12 +43,12 @@ public class UserService implements UserServiceInterface {
 
 
     @Override
-    public void update(User user) {
+    public void update(User user) throws UserException {
         userModel.update(user);
     }
 
     @Override
-    public void delete(int userId) {
+    public void delete(int userId) throws UserException {
         userModel.delete(userId);
     }
 

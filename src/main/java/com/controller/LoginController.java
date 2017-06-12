@@ -3,6 +3,7 @@ package com.controller;
 import com.entity.LoginRequest;
 import com.entity.User;
 import com.exception.LoginException;
+import com.exception.UserException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.service.UserService;
@@ -13,10 +14,7 @@ import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -24,6 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Controller
+@CrossOrigin
 @RequestMapping("/login")
 public class LoginController {
     @Autowired
@@ -43,7 +42,7 @@ public class LoginController {
      * @return an error if the user is unknown, a JWT-token if all goes well.
      */
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Object> requestLogin(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<Object> requestLogin(@RequestBody LoginRequest loginRequest) throws LoginException {
         System.out.println(loginRequest.getUsername());
         User user = null;
 
@@ -55,9 +54,9 @@ public class LoginController {
             }
 
 
-        } catch (LoginException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("login failure");
+            throw new LoginException("INVALID_CREDENTIALS");
         }
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("token", jwtUtil.generateJWT(user));

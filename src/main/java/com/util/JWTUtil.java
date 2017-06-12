@@ -3,6 +3,7 @@ package com.util;
 
 import com.entity.User;
 import com.entity.UserRole;
+import com.exception.UserException;
 import com.model.UserModel;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.impl.crypto.MacProvider;
@@ -60,7 +61,7 @@ public class JWTUtil {
      * @return claims object that holds the parsed information
      * @throws UnsupportedEncodingException if the parsing fails (token is invalid)
      */
-    public User parseJWT(String token) throws UnsupportedEncodingException {
+    public User parseJWT(String token) throws UnsupportedEncodingException, UserException {
 
         Jws<Claims> claims = Jwts.parser()
                 .requireSubject("user")

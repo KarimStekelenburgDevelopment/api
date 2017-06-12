@@ -1,6 +1,7 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -8,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "areas", schema = "public", catalog = "PocketOrder")
 public class Area implements Serializable {
     private int id;
@@ -58,6 +59,7 @@ public class Area implements Serializable {
         return result;
     }
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "areas_users", catalog = "PocketOrder", schema = "public", joinColumns = @JoinColumn(name = "area_fk", referencedColumnName = "id", nullable = false), inverseJoinColumns = @JoinColumn(name = "user_fk", referencedColumnName = "id", nullable = false))
     public List<User> getUsers() {

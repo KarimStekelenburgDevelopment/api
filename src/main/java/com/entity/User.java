@@ -1,6 +1,8 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -10,7 +12,7 @@ import java.util.List;
 
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @Table(name = "users", schema = "public", catalog = "PocketOrder")
 public class User implements Serializable {
     private int id;
@@ -21,6 +23,8 @@ public class User implements Serializable {
     private UserRole role;
 
     @Id
+    @SequenceGenerator(name="pk_sequence",sequenceName="users_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.AUTO ,generator="pk_sequence")
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -40,7 +44,10 @@ public class User implements Serializable {
         this.username = username;
     }
 
+
+
     @Basic
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "psswrd", nullable = false, length = 40)
     public String getPassword() {
         return password;

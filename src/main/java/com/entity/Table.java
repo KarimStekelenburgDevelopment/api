@@ -1,6 +1,7 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -55,6 +56,8 @@ public class Table implements Serializable {
         result = 31 * result + numofseats;
         return result;
     }
+
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "area_fk", referencedColumnName = "id", nullable = false)
     public Area getArea() {

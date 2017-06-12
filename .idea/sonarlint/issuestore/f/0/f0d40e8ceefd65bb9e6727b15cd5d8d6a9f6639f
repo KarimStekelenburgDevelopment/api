@@ -1,8 +1,9 @@
 
-vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(×æ©Êùÿÿÿÿ8Ôß…ú¿+
 vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(³ä÷Õşÿÿÿÿ8Ôß…ú¿+
 qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¼•8Ôß…ú¿+
+Gsquid:S1948"&Make "role" transient or serializable.(şŸ–øÿÿÿÿ8ü©ÆÇ+
 vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(›î¦¿şÿÿÿÿ8Ôß…ú¿+
-vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¹ÌµÛüÿÿÿÿ8Ôß…ú¿+
-Gsquid:S1948"&Make "Role" transient or serializable.(²Ì¤úøÿÿÿÿ8Ü—«¦Æ+
-qsquid:S00116"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ì¤úøÿÿÿÿ8ËÓÿÅ+
+<squid:S2068" Remove this hard-coded password.(é¶Éº8ü©ÆÇ+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(×æ©Êùÿÿÿÿ8Ôß…ú¿+
+qsquid:UselessImportCheck"HRemove this unused import 'com.fasterxml.jackson.annotation.JsonIgnore'.(ş‘‹„8Äˆ¯ñÇ+
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(Äç›8ü©ÆÇ+

@@ -1,6 +1,7 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -37,6 +38,7 @@ public class SuborderType implements Serializable {
         this.name = name;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "type")
     public List<Suborder> getSuborders() {
         return suborders;

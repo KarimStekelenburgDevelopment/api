@@ -1,8 +1,8 @@
 
-Psquid:S1656"/Remove or correct this useless self-assignment.(ö®óÍùÿÿÿÿ8÷êÂ˜Æ+
 Zsquid:S1854"9Remove this useless assignment to local variable "users".(ö®óÍùÿÿÿÿ8÷êÂ˜Æ+
-qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(÷…™’8÷êÂ˜Æ+
-vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(×æ©Êùÿÿÿÿ8÷êÂ˜Æ+
-psquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(“©¬[8÷êÂ˜Æ+
 csquid:S1226"BIntroduce a new variable instead of reusing the parameter "users".(ö®óÍùÿÿÿÿ8÷êÂ˜Æ+
+psquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(“©¬[8÷êÂ˜Æ+
 vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(›î¦¿şÿÿÿÿ8÷êÂ˜Æ+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(×æ©Êùÿÿÿÿ8÷êÂ˜Æ+
+Psquid:S1656"/Remove or correct this useless self-assignment.(ö®óÍùÿÿÿÿ8÷êÂ˜Æ+
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(÷…™’8÷êÂ˜Æ+

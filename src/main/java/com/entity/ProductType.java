@@ -1,6 +1,7 @@
 package com.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -56,6 +57,7 @@ public class ProductType implements Serializable {
         return result;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "type")
     public List<Product> getProducts() {
         return products;
