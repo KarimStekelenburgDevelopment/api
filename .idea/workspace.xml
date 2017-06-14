@@ -2,63 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcdd2dbe-5dba-4654-8628-ac30a80d1a7e" name="Default" comment="Final version of MVC setup befor transition to RESTful setup.&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ExceptionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserRoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/exception/UserRoleException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserRoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserRoleServiceInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/046257326a795bf043286c1599dedcdcf9102bab" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/046257326a795bf043286c1599dedcdcf9102bab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/060e4465fa508961e9fd44875c5a850a9925ebfe" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/060e4465fa508961e9fd44875c5a850a9925ebfe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/0724d65a9edb3bd7828cc6700dae9ca5a9b493a5" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/0724d65a9edb3bd7828cc6700dae9ca5a9b493a5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/11e41e2b7a3127722fe7acf70e85a02059e22ca1" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/11e41e2b7a3127722fe7acf70e85a02059e22ca1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/272fa5009a61613ce612108f9f50e011ade76ae6" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/272fa5009a61613ce612108f9f50e011ade76ae6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/434eadafd6f452afa0e99af114cff69d395caeff" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/434eadafd6f452afa0e99af114cff69d395caeff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/5017bd5700166ad56e35c42db57283068278573d" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/5017bd5700166ad56e35c42db57283068278573d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d94f609830939b3f404c0cd061e8d543c670f1e" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d94f609830939b3f404c0cd061e8d543c670f1e" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72f12917911367adee12ee3c555c1194ab2e6c1e" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72f12917911367adee12ee3c555c1194ab2e6c1e" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73f877893eda750887ebacc785f15081e08e6d0f" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73f877893eda750887ebacc785f15081e08e6d0f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ceb260680a1696874d159b7e5f8440fc6a5f9e1f" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ceb260680a1696874d159b7e5f8440fc6a5f9e1f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8fe6cb3e2ce22939eaf2ce39ca72a0e5f24b9b5" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8fe6cb3e2ce22939eaf2ce39ca72a0e5f24b9b5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0d40e8ceefd65bb9e6727b15cd5d8d6a9f6639f" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0d40e8ceefd65bb9e6727b15cd5d8d6a9f6639f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3cc1220908eb70535c34cad11202fbb7bd0af42" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3cc1220908eb70535c34cad11202fbb7bd0af42" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/febf72dce9255201a7197100450e0b48c35cc6d0" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/febf72dce9255201a7197100450e0b48c35cc6d0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/com/controller/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/Area.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/Area.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/Order.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/ProductType.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/ProductType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/Suborder.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/Suborder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/SuborderType.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/SuborderType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/Table.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/Table.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/entity/UserRole.class" afterPath="$PROJECT_DIR$/target/classes/com/entity/UserRole.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/exception/LoginException.class" afterPath="$PROJECT_DIR$/target/classes/com/exception/LoginException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/exception/UserException.class" afterPath="$PROJECT_DIR$/target/classes/com/exception/UserException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/model/UserModel.class" afterPath="$PROJECT_DIR$/target/classes/com/model/UserModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/model/UserModelInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/model/UserModelInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/service/UserServiceInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/service/UserServiceInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/util/JWTUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/util/JWTUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_2_9_5_2_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_2_9_5_2_9.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/Area.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Area.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/ProductType.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/ProductType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/Suborder.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Suborder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/SuborderType.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/SuborderType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/Table.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/entity/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/UserRole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/exception/LoginException.java" afterPath="$PROJECT_DIR$/src/main/java/com/exception/LoginException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/exception/UserException.java" afterPath="$PROJECT_DIR$/src/main/java/com/exception/UserException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/model/UserModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/model/UserModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/model/UserModelInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/model/UserModelInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/UserServiceInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserServiceInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/util/JWTUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/util/JWTUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -111,24 +55,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="405">
               <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserModel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/model/UserModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="106" column="23" lean-forward="false" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -372,8 +314,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-78" />
+    <option name="y" value="801" />
     <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="height" value="896" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -702,7 +646,6 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1305,16 +1248,16 @@
       <workItem from="1496918991141" duration="2719000" />
       <workItem from="1497189985733" duration="1385000" />
       <workItem from="1497192604478" duration="10643000" />
-      <workItem from="1497278904872" duration="655000" />
+      <workItem from="1497278904872" duration="1923000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172235000" />
+    <option name="totallyTimeSpent" value="173503000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
-    <editor active="true" />
+    <frame x="-78" y="801" width="2560" height="896" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1338,11 +1281,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51386863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7960199" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18163753" sideWeight="0.3183183" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18163753" sideWeight="0.6816817" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18163753" sideWeight="0.34146342" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18163753" sideWeight="0.6585366" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18030183" sideWeight="0.3109489" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1815,16 +1758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/UserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/UserServiceInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1861,8 +1794,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="405">
           <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/model/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="106" column="23" lean-forward="false" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
           <folding />
         </state>
       </provider>
