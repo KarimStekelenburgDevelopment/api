@@ -1,21 +1,11 @@
 
-Tsquid:S1854"8Remove this useless assignment to local variable "user".(ÉÌ«ø8„Ü‹ÀÉ+
-|squid:UselessImportCheck"NRemove this unused import 'org.springframework.security.crypto.bcrypt.BCrypt'.(¨úì®ÿÿÿÿÿ8³©ÆÇ+
 Osquid:S1481".Remove this unused "userInput" local variable.(ÈâÎ¸şÿÿÿÿ8¢À‡¾É+
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†€éˆ8É–ÁÉ+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(„Âô–ÿÿÿÿÿ8Šç—ÄÉ+
 ^squid:S1854"=Remove this useless assignment to local variable "userInput".(ÈâÎ¸şÿÿÿÿ8¢À‡¾É+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼®ĞÁÉ+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(§÷ÓÖúÿÿÿÿ8Ïâ£±Ê+
 V
-squid:S106";Replace this usage of System.out or System.err by a logger.(Ø¼¢ƒ8Å£›ÁÉ+
-Esquid:S1481")Remove this unused "user" local variable.(ÉÌ«ø8„Ü‹ÀÉ+
-Asquid:S1166"%Either log or rethrow this exception.(”ı¾8øõŒÀÉ+
-bsquid:UselessImportCheck"9Remove this unused import 'com.exception.LoginException'.(ã¬£Û8Ñè‡¼É+
-@squid:S1166"%Either log or rethrow this exception.(ÂÓ¤v8¸¶ÀÉ+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸¶ÀÉ+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(­ ‘ˆüÿÿÿÿ8¤ø¡ÃÉ+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(àŒ«—ùÿÿÿÿ8å¬˜ÄÉ+
-Fsquid:S1166"%Either log or rethrow this exception.(ØçÔ·ÿÿÿÿÿ8³©ÆÇ+
+squid:S106";Replace this usage of System.out or System.err by a logger.(Ø¼¢ƒ8Ïâ£±Ê+
+Asquid:S1166"%Either log or rethrow this exception.(ƒø¨¶8Ïâ£±Ê+
+Fsquid:S1166"%Either log or rethrow this exception.(ØçÔ·ÿÿÿÿÿ8Ïâ£±Ê+
+fsquid:UselessImportCheck"8Remove this unused import 'com.exception.UserException'.(Úºƒşÿÿÿÿ8Ïâ£±Ê+
+|squid:UselessImportCheck"NRemove this unused import 'org.springframework.security.crypto.bcrypt.BCrypt'.(¨úì®ÿÿÿÿÿ8Ïâ£±Ê+

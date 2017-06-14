@@ -1,10 +1,10 @@
 
-msquid:UselessImportCheck"DRemove this unused import 'io.jsonwebtoken.impl.crypto.MacProvider'.(ÿĞù‹8µ›©ÆÇ+
-\squid:UselessImportCheck".Remove this unused import 'java.security.Key'.(ŞÃ“úÿÿÿÿ8µ›©ÆÇ+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜Øÿƒùÿÿÿÿ8µ›©ÆÇ+
 fsquid:UselessImportCheck"8Remove this unused import 'io.jsonwebtoken.lang.Assert'.(ëÈ¯Éşÿÿÿÿ8İ‹ë‚Ç+
 xsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "user".(Ì–æ¸8µ›©ÆÇ+
+^squid:UselessImportCheck"0Remove this unused import 'com.entity.UserRole'.(Ë¬íşÿÿÿÿ8İëéƒÇ+
+¦squid:S1160"‰Refactor this method to throw at most one checked exception instead of: java.io.UnsupportedEncodingException, com.exception.UserException(ª´ÂĞ8îŞÃ½É+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜Øÿƒùÿÿÿÿ8µ›©ÆÇ+
+msquid:UselessImportCheck"DRemove this unused import 'io.jsonwebtoken.impl.crypto.MacProvider'.(ÿĞù‹8µ›©ÆÇ+
 V
 squid:S106";Replace this usage of System.out or System.err by a logger.(êÕã8µ›©ÆÇ+
-¦squid:S1160"‰Refactor this method to throw at most one checked exception instead of: java.io.UnsupportedEncodingException, com.exception.UserException(ª´ÂĞ8îŞÃ½É+
-^squid:UselessImportCheck"0Remove this unused import 'com.entity.UserRole'.(Ë¬íşÿÿÿÿ8İëéƒÇ+
+\squid:UselessImportCheck".Remove this unused import 'java.security.Key'.(ŞÃ“úÿÿÿÿ8µ›©ÆÇ+
