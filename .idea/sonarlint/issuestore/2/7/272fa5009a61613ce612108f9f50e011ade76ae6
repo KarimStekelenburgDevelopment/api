@@ -1,13 +1,13 @@
 
-^squid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8éş¨ÆÇ+
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Éè¯†øÿÿÿÿ8”¦ÅÿÅ+
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÜÏŒÈ8é£±Ê+
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(º—Şÿÿÿÿÿ8é£±Ê+
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŞÒÈ…úÿÿÿÿ8é£±Ê+
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(“ïñò8é£±Ê+
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(º—Şÿÿÿÿÿ8é£±Ê+
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÜÏŒÈ8ŞÜÎ±Ê+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(º—Şÿÿÿÿÿ8ŞÜÎ±Ê+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŞÒÈ…úÿÿÿÿ8ŞÜÎ±Ê+
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(“ïñò8ŞÜÎ±Ê+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(º—Şÿÿÿÿÿ8ŞÜÎ±Ê+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Éè¯†øÿÿÿÿ8ŞÜÎ±Ê+
 V
-squid:S106";Replace this usage of System.out or System.err by a logger.(Ö×æŒ8é£±Ê+
+squid:S106";Replace this usage of System.out or System.err by a logger.(Ö×æŒ8ŞÜÎ±Ê+
 V
-squid:S106";Replace this usage of System.out or System.err by a logger.(³¬œ‰8é£±Ê+
-Esquid:S1125")Remove the literal "false" boolean value.(ûÅŸ8é£±Ê+
+squid:S106";Replace this usage of System.out or System.err by a logger.(³¬œ‰8ŞÜÎ±Ê+
+Esquid:S1125")Remove the literal "false" boolean value.(ûÅŸ8ŞÜÎ±Ê+
+^squid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ŞÜÎ±Ê+

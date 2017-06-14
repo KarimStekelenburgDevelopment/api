@@ -109,7 +109,7 @@ public class UserModel implements UserModelInterface {
         user1.setPassword(passwordEncoder().encode(user.getPassword()));
         user1.setAreas(user.getAreas());
         user1.setRole(user.getRole());
-        entityManager.flush();
+        entityManager.merge(user1);
     }
 
     @Override
