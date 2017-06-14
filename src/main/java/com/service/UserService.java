@@ -41,12 +41,13 @@ public class UserService implements UserServiceInterface {
     }
 
 
-
+    @Transactional
     @Override
     public void update(User user) throws UserException {
         userModel.update(user);
     }
 
+    @Transactional
     @Override
     public void delete(int userId) throws UserException {
         userModel.delete(userId);

@@ -40,7 +40,6 @@ public class UserController {
         User user = userService.getById(id);
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
-    
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> addUser(@RequestBody User user, UriComponentsBuilder builder) throws UserRoleException, UserException {
@@ -50,12 +49,13 @@ public class UserController {
         headers.setLocation(builder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
+
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<User> updateUser(@RequestBody User user) throws UserException {
         userService.update(user);
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id) throws UserException {
         userService.delete(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);

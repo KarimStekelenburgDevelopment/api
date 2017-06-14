@@ -71,7 +71,7 @@ public class UserModel implements UserModelInterface {
 
     }
 
-
+    @Transactional
     @Override
     public void add(User user) throws UserRoleException, UserException {
         try{
@@ -101,17 +101,24 @@ public class UserModel implements UserModelInterface {
      *
      * @param user
      */
-
+    @Transactional
     @Override
     public void update(User user) throws UserException {
+        System.out.println(user);
         User user1 = getById(user.getId());
-        user1.setUsername(user.getUsername());
-        user1.setPassword(passwordEncoder().encode(user.getPassword()));
-        user1.setAreas(user.getAreas());
-        user1.setRole(user.getRole());
+        if (user.getUsername() != null){
+            user1.setUsername(user.getUsername());
+        } if (user.getPassword() != null){
+            user1.setPassword(passwordEncoder().encode(user.getPassword()));
+        } if (user.getAreas() != null){
+            user1.setAreas(user.getAreas());
+        } if (user.getRole() != null){
+            user1.setRole(user.getRole());
+        }
         entityManager.merge(user1);
     }
 
+    @Transactional
     @Override
     public void delete(int id) throws UserException {
         entityManager.remove(getById(id));
