@@ -23,7 +23,7 @@ import java.util.Map;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/login")
+@RequestMapping("login")
 public class LoginController {
     @Autowired
     private UserServiceInterface userService = new UserService();
