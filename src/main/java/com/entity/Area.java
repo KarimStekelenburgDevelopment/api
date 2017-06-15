@@ -8,6 +8,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+
+@NamedQueries({
+        @NamedQuery(
+                name="getAllAreas",
+                query="FROM Area as ar ORDER BY ar.id"
+        )
+})
+
 @Entity
 //@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "areas", schema = "public", catalog = "PocketOrder")
@@ -20,6 +28,8 @@ public class Area implements Serializable {
     private List<Table> tables;
 
     @Id
+    @SequenceGenerator(name="pk_sequence",sequenceName="areas_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.AUTO ,generator="pk_sequence")
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -72,7 +82,7 @@ public class Area implements Serializable {
 
     @OneToMany(mappedBy = "area")
     public List<Table> getTables() {
-        return tables;
+        return this.tables;
     }
 
     public void setTables(List<Table> tables) {

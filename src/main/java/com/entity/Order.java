@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "orders", schema = "public", catalog = "PocketOrder")
 public class Order implements Serializable {
     private int id;
@@ -21,6 +21,8 @@ public class Order implements Serializable {
 
 
     @Id
+    @SequenceGenerator(name="pk_sequence",sequenceName="orders_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.AUTO ,generator="pk_sequence")
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -63,7 +65,7 @@ public class Order implements Serializable {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "table_fk", referencedColumnName = "area_fk", nullable = false)
+    @JoinColumn(name = "table_fk", referencedColumnName = "id", nullable = false)
     public Table getTable() {
         return table;
     }

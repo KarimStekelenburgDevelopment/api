@@ -136,6 +136,7 @@ public class UserModel implements UserModelInterface {
         }
     }
 
+
     @Override
     public boolean validatePassword(User user, String password) {
         String userInput = passwordEncoder().encode(password);

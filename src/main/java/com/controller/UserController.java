@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import com.entity.User;
+import com.entity.UserRole;
 import com.exception.UserException;
 import com.exception.UserRoleException;
 import com.service.UserServiceInterface;
@@ -41,6 +42,7 @@ public class UserController {
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> addUser(@RequestBody User user, UriComponentsBuilder builder) throws UserRoleException, UserException {
         System.out.println("controller");
@@ -59,5 +61,17 @@ public class UserController {
     public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id) throws UserException {
         userService.delete(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
+
+    /**
+     * Checks header and returns users role
+     * @param token
+     * @return
+     * @throws UserException
+     * @throws UnsupportedEncodingException
+     */
+    @GetMapping("/iHaveRights")
+    public ResponseEntity<UserRole> getRole(@RequestHeader("Authorization") String token) throws UserException, UnsupportedEncodingException {
+        return new ResponseEntity<UserRole>(jwtUtil.parseJWT(token).getRole(), HttpStatus.OK);
     }
 }

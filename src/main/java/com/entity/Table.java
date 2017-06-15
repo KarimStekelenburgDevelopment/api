@@ -8,16 +8,34 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+@NamedQueries({
+        @NamedQuery(
+                name="getAllTables",
+                query="FROM Table as tab ORDER BY tab.id"
+        ),
+
+        @NamedQuery(
+                name="getByAreaId",
+                query="FROM Table where area = :area"
+        )
+})
+
+
+
+
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @javax.persistence.Table(name = "tables", schema = "public", catalog = "PocketOrder")
 public class Table implements Serializable {
+
     private int id;
     private int numofseats;
     private Area area;
     private List<Order> orders;
 
     @Id
+    @SequenceGenerator(name="pk_sequence",sequenceName="tables_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.AUTO ,generator="pk_sequence")
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -68,8 +86,8 @@ public class Table implements Serializable {
         this.area = area;
     }
 
-
-    @OneToMany(mappedBy = "table")
+    @JsonIgnore
+    @OneToMany(mappedBy = "table", fetch = FetchType.LAZY)
     public List<Order> getOrders() {
         return orders;
     }

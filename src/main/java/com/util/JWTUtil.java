@@ -49,6 +49,7 @@ public class JWTUtil {
                 .setIssuedAt(now)
                 .claim("distortion", nowMillis)
                 .claim("userId", user.getId())
+                .claim("role", user.getRole())
                 .signWith(SignatureAlgorithm.HS512, key)
                 .compact();
 

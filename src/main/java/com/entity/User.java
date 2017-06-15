@@ -98,6 +98,14 @@ public class User implements Serializable {
         this.role = role;
     }
 
+    @Transient
+    private boolean isAdmin(){
+        if (this.getRole().getName() == "floormanager"){
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public String toString() {
