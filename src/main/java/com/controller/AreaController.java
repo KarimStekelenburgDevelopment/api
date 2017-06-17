@@ -2,6 +2,7 @@ package com.controller;
 
 import com.entity.Area;
 import com.entity.Table;
+import com.entity.User;
 import com.exception.AreaException;
 import com.service.AreaService;
 import com.service.AreaServiceInterface;
@@ -36,6 +37,18 @@ public class AreaController {
         return new ResponseEntity<Area>(area, HttpStatus.OK);
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "getTables/{id}")
+    public ResponseEntity<List<Table>> getTables(@RequestHeader("Authorization") String token , @PathVariable("id") int id) throws UnsupportedEncodingException, AreaException {
+        Area area = areaService.getById(id);
+        return new ResponseEntity<List<Table>>(area.getTables(), HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "getUsers/{id}")
+    public ResponseEntity<List<User>> getUsers(@RequestHeader("Authorization") String token , @PathVariable("id") int id) throws AreaException {
+        Area area = areaService.getById(id);
+        return new ResponseEntity<List<User>>(area.getUsers(), HttpStatus.OK);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> addArea(@RequestBody Area area, UriComponentsBuilder builder) {
         areaService.add(area);
@@ -55,9 +68,5 @@ public class AreaController {
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "getTables/{id}")
-    public ResponseEntity<List<Table>> getTables(@RequestHeader("Authorization") String token , @PathVariable("id") int id) throws UnsupportedEncodingException, AreaException {
-        Area area = areaService.getById(id);
-        return new ResponseEntity<List<Table>>(area.getTables(), HttpStatus.OK);
-    }
+
 }

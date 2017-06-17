@@ -10,7 +10,9 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.List;
 
-
+@NamedQueries({
+        @NamedQuery(name = "getAllUsers", query = "FROM User as usr ORDER BY usr.id"),
+})
 @Entity
 //@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @Table(name = "users", schema = "public", catalog = "PocketOrder")
@@ -79,6 +81,7 @@ public class User implements Serializable {
         return result;
     }
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
     public List<Area> getAreas() {
         return areas;

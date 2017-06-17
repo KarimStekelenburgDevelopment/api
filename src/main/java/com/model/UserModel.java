@@ -41,8 +41,7 @@ public class UserModel implements UserModelInterface {
     @SuppressWarnings("unchecked")
     @Override
     public List<User> getAll() {
-        String hql = "FROM User as usr ORDER BY usr.id";
-        return (List<User>) entityManager.createQuery(hql).getResultList();
+        return (List<User>) entityManager.createNamedQuery("getAllUsers").getResultList();
     }
 
     @Override
@@ -70,7 +69,7 @@ public class UserModel implements UserModelInterface {
 
 
     }
-
+    
     @Transactional
     @Override
     public void add(User user) throws UserRoleException, UserException {
