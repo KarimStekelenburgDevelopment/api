@@ -1,5 +1,6 @@
 package com.model;
 
+import com.entity.Area;
 import com.entity.User;
 import com.entity.UserRole;
 import com.exception.LoginException;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -69,7 +71,22 @@ public class UserModel implements UserModelInterface {
 
 
     }
-    
+
+    /**
+     * Returns a list of all users that are NOT associated with the
+     * given area id.
+     * @param area
+     * @return
+     */
+    @Override
+    public List<User> getUsersNotWithArea(Area area){
+
+
+
+        return entityManager.createNamedQuery("getUsersNotForArea").setParameter(1, area.getId()).getResultList();
+    }
+
+
     @Transactional
     @Override
     public void add(User user) throws UserRoleException, UserException {

@@ -80,6 +80,14 @@ public class Area implements Serializable {
         this.users = users;
     }
 
+    public void addUser(User user){
+        this.users.add(user);
+    }
+
+    public void removeUser(User user){
+        this.users.remove(user);
+    }
+
     @OneToMany(mappedBy = "area")
     public List<Table> getTables() {
         return this.tables;

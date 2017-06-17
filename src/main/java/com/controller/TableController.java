@@ -1,8 +1,10 @@
 package com.controller;
 
+import com.entity.Area;
 import com.entity.Table;
 import com.exception.AreaException;
 import com.exception.TableException;
+import com.service.AreaServiceInterface;
 import com.service.TableServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -23,6 +25,9 @@ public class TableController {
     @Autowired
     private TableServiceInterface tableService;
 
+    @Autowired
+    private AreaServiceInterface areaService;
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Table>> getAllUsers(@RequestHeader("Authorization") String token) throws UnsupportedEncodingException {
         List<Table> list = tableService.getAll();
@@ -41,8 +46,10 @@ public class TableController {
         return new ResponseEntity<>(tables, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Void> addTable(@RequestBody Table table, UriComponentsBuilder builder) {
+    @RequestMapping(value = "/{areaId}",method = RequestMethod.POST)
+    public ResponseEntity<Void> addTable(@RequestBody Table table, @PathVariable("areaId") int areaId, UriComponentsBuilder builder) throws AreaException {
+        Area area = areaService.getById(areaId);
+        table.setArea(area);
         tableService.add(table);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/table/{id}").buildAndExpand(table.getId()).toUri());

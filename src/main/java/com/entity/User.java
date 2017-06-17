@@ -7,11 +7,35 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.awt.print.Book;
 import java.io.Serializable;
 import java.util.List;
 
+@SqlResultSetMapping(
+        name = "BookMapping",
+        entities = @EntityResult(
+                entityClass = User.class,
+                fields = {
+                        @FieldResult(name = "id", column = "id"),
+                        @FieldResult(name = "username", column = "username"),
+                        @FieldResult(name = "title", column = "areas"),
+                        @FieldResult(name = "publishingDate", column = "role"),
+                        @FieldResult(name = "publisher", column = "publisherid")}))
+
 @NamedQueries({
         @NamedQuery(name = "getAllUsers", query = "FROM User as usr ORDER BY usr.id"),
+//        @NamedQuery(name = "getUsersNotForArea", query = "FROM User usr WHERE usr.")
+})
+
+@NamedNativeQueries({
+        @NamedNativeQuery(name = "getUsersNotForArea", query = "SELECT *\n" +
+                "FROM users " +
+                "WHERE id NOT IN (" +
+                "  SELECT junction.user_fk" +
+                "  FROM areas_users as junction" +
+                "  WHERE area_fk = (?)" +
+                ")", resultClass = User.class)
+
 })
 @Entity
 //@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")

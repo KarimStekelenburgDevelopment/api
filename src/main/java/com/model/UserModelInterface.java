@@ -1,5 +1,6 @@
 package com.model;
 
+import com.entity.Area;
 import com.entity.User;
 import com.exception.LoginException;
 import com.exception.UserException;
@@ -11,6 +12,8 @@ public interface UserModelInterface {
     User getById(int id) throws UserException;
 
     User getUserByUsername(String username) throws UserException;
+
+    List<User> getUsersNotWithArea(Area area);
 
     void add(User user) throws UserRoleException, UserException;
     void update(User user) throws UserException;

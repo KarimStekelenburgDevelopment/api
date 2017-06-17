@@ -95,4 +95,15 @@ public class Table implements Serializable {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
+
+    @Override
+    public String toString() {
+        return "Table{" +
+                "id=" + id +
+                ", numofseats=" + numofseats +
+                ", area=" + area +
+                ", orders=" + orders +
+                '}';
+    }
 }
+

@@ -1,8 +1,10 @@
 package com.service;
 
 import com.entity.Area;
+import com.entity.User;
 import com.exception.AreaException;
 import com.model.AreaModelInterface;
+import com.model.UserModelInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class AreaService implements AreaServiceInterface{
     @Autowired
     private AreaModelInterface areaModel;
 
+    @Autowired
+    private UserModelInterface userModel;
+
     @Override
     public List<Area> getAll() {
         return areaModel.getAll();
@@ -22,6 +27,11 @@ public class AreaService implements AreaServiceInterface{
     @Override
     public Area getById(int id) throws AreaException {
         return areaModel.getById(id);
+    }
+
+    @Override
+    public List<User> getAvalibleUsers(Area area) throws AreaException {
+        return userModel.getUsersNotWithArea(area);
     }
 
     @Override
