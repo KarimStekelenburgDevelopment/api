@@ -4,9 +4,7 @@ import com.entity.Area;
 import com.entity.Table;
 import com.exception.AreaException;
 import com.exception.TableException;
-import javafx.scene.control.Tab;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
