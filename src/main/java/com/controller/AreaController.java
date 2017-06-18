@@ -30,7 +30,6 @@ public class AreaController {
     @Autowired
     private UserServiceInterface userService;
 
-    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Area>> getAllUsers(@RequestHeader("Authorization") String token) throws UnsupportedEncodingException {
         List<Area> list = areaService.getAll();
         return new ResponseEntity<>(list, HttpStatus.OK);

@@ -88,6 +88,7 @@ public class Area implements Serializable {
         this.users.remove(user);
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "area")
     public List<Table> getTables() {
         return this.tables;
